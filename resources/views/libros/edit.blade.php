@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<x-app-layout>
 
 <!-- formulario de creación de categorías -->
 <form action="{{ route('libros.update', $libro) }}" method="POST">
@@ -39,4 +38,4 @@
     <button type="submit" class="btn btn-primary">Actualizar Libro</button>
 </form>
 
-@endsection
+</x-app-layout>

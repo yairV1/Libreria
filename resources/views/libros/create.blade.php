@@ -1,6 +1,4 @@
-@extends('layouts.app')
-@section('content')
-
+<x-app-layout>
 <!-- formulario de creación de categorías -->
 <form action="{{ route('libros.store') }}" method="POST">
     @csrf
@@ -35,5 +33,4 @@
         
     <button type="submit" class="btn btn-primary">Crear Libro</button>
 </form>
-
-@endsection
+</x-app-layout>

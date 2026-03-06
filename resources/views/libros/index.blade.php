@@ -1,5 +1,5 @@
-@extends('layouts.app')
-@section('content')
+<x-app-layout>
+
 @if(session('success'))
     <div class="alert alert-success">
         {{ session('success') }}
@@ -45,5 +45,6 @@
             @endforeach
         </tbody>
     </table>
-@endsection    
+</x-app-layout>
+
     
