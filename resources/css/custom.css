@@ -1,0 +1,131 @@
+/* custom.css - estilos bonitos para la aplicación de bibliotecas
+   Este archivo se carga después de Bootstrap/Tailwind y contiene reglas
+   específicas para dar una apariencia más cuidada y personalizada.
+   Cada bloque incluye un pequeño comentario que describe su propósito. */
+
+/* ---------- Tipografía general ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa; /* gris claro de fondo */
+    color: #212529; /* texto oscuro legible */
+}
+
+/* Encabezado y navegación */
+header {
+    background: linear-gradient(90deg, #0062E6 0%, #33AEFF 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: .025em;
+}
+header .nav-link {
+    transition: color .3s;
+}
+header .nav-link:hover {
+    color: #ffe066 !important;
+}
+
+/* Containers principales */
+.container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+/* Tarjetas para listas de recursos */
+.card-custom {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .05);
+    transition: transform .2s, box-shadow .2s;
+}
+.card-custom:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .08);
+}
+.card-custom .card-body {
+    padding: 1.25rem;
+}
+
+/* Tablas estilizadas */
+.table-custom {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #495057;
+    border-collapse: collapse;
+}
+.table-custom th,
+.table-custom td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+.table-custom thead th {
+    background-color: #e9ecef;
+    font-weight: 600;
+}
+.table-custom tbody tr:hover {
+    background-color: #f1f3f5;
+}
+
+/* Formularios con estilo */
+.form-control-custom {
+    border: 1px solid #ced4da;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.form-control-custom:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+}
+
+/* Botones con apariencia propia */
+.btn-primary-custom {
+    background-color: #0062E6;
+    border-color: #0056b3;
+    color: #fff;
+}
+.btn-primary-custom:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+.btn-secondary-custom {
+    background-color: #6c757d;
+    border-color: #6c757d;
+    color: #fff;
+}
+.btn-secondary-custom:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* Mensajes de alerta``` */
+.alert-custom {
+    border-radius: .375rem;
+    padding: .75rem 1.25rem;
+    margin-bottom: 1rem;
+}
+.alert-success-custom {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+.alert-danger-custom {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Pie de página */
+footer {
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+    padding: 1rem 0;
+}
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6c757d;
+    letter-spacing: .02em;
+}
