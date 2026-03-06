@@ -22,7 +22,7 @@
             --line: #e2d9cc;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; scrollbar-width: none; }
 
         body {
             background-color: var(--paper);
@@ -30,7 +30,7 @@
             font-family: 'DM Sans', sans-serif;
             overflow-x: hidden;
 
-            
+
         }
 
         /* ── NAVBAR ── */
