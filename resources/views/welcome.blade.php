@@ -29,6 +29,8 @@
             color: var(--ink);
             font-family: 'DM Sans', sans-serif;
             overflow-x: hidden;
+
+            
         }
 
         /* ── NAVBAR ── */
