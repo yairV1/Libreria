@@ -474,6 +474,9 @@
                 <li class="nav-item">
                     <a class="nav-link btn-nav-login" href="/login">Iniciar sesión</a>
                 </li>
+                <li class="nav-item">
+                   <a class="nav-link btn-nav-login" href="/register">Registrarse</a>
+                </li>
             </ul>
         </div>
     </div>
