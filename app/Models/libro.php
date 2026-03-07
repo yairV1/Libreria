@@ -16,6 +16,11 @@ class libro extends Model
         'isbn',
         'categoria_id',
         'cantidad_disponible',
+        // nuevos campos para detalles del libro
+        'sinopsis',
+        'portada',        // URL o ruta de la imagen de portada
+        'editorial',
+        'numero_paginas',
     ];
 
     // relacion de muchos a uno con categorias

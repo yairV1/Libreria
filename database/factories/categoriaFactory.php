@@ -28,6 +28,10 @@ class categoriaFactory extends Factory
             'nombre' => $this->faker->randomElement($categorias),
             'descripcion' => $this->faker->sentence(),
             'estado' => $this->faker->boolean(80),
+
+            // extras visuales
+            'color' => $this->faker->hexColor(),
+            'icono' => $this->faker->randomElement(['fa-book','fa-film','fa-music','fa-star','fa-heart','fa-book-reader']),
         ];
     }
 }

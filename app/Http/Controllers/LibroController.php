@@ -21,7 +21,10 @@ class LibroController extends Controller
      */
     public function index()
     {
-        $libros = libro::with('categoria')->get();
+        // paginar para no cargar todos los registros a la vez y acelerar la carga
+        $libros = libro::with('categoria')
+                       ->orderBy('titulo')
+                       ->paginate(15);
         return view('libros.index', compact('libros'));
     }
 
@@ -46,6 +49,12 @@ class LibroController extends Controller
             'isbn' => 'required|unique:libros,isbn',
             'categoria_id' => 'required',
             'cantidad_disponible' => 'required|integer',
+
+            // nuevos atributos opcionales
+            'sinopsis' => 'nullable|string',
+            'portada' => 'nullable|url',
+            'editorial' => 'nullable|string',
+            'numero_paginas' => 'nullable|integer',
         ]);
 
         libro::create($request->all());
@@ -82,6 +91,12 @@ class LibroController extends Controller
             'isbn' => 'required|unique:libros,isbn,' . $libro->id,
             'categoria_id' => 'required',
             'cantidad_disponible' => 'required|integer',
+
+            // validar los nuevos campos en edición
+            'sinopsis' => 'nullable|string',
+            'portada' => 'nullable|url',
+            'editorial' => 'nullable|string',
+            'numero_paginas' => 'nullable|integer',
         ]);
 
         $libro->update($request->all());

@@ -13,6 +13,9 @@ class categorias extends Model
         'nombre',
         'descripcion',
         'estado',
+        // campos para mejorar la presentación en la UI
+        'color',          // color asociado a la categoría
+        'icono',          // nombre/clase de icono (por ejemplo de FontAwesome)
     ];
 
     /**
