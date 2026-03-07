@@ -256,6 +256,38 @@
                 @enderror
             </div>
 
+            {{-- Color (para UI) --}}
+            <div class="mb-4">
+                <label for="color" class="form-label-custom">Color</label>
+                <input
+                    type="text"
+                    id="color"
+                    name="color"
+                    class="input-custom"
+                    value="{{ old('color', $categorias->color) }}"
+                    placeholder="#aabbcc o nombre de CSS"
+                >
+                @error('color')
+                    <p class="field-error">{{ $message }}</p>
+                @enderror
+            </div>
+
+            {{-- Icono --}}
+            <div class="mb-4">
+                <label for="icono" class="form-label-custom">Icono</label>
+                <input
+                    type="text"
+                    id="icono"
+                    name="icono"
+                    class="input-custom"
+                    value="{{ old('icono', $categorias->icono) }}"
+                    placeholder="fa-book, bi-music, etc."
+                >
+                @error('icono')
+                    <p class="field-error">{{ $message }}</p>
+                @enderror
+            </div>
+
             <hr class="form-divider">
 
             {{-- Actions --}}

@@ -259,6 +259,41 @@
                     @error('isbn') <p class="field-error">{{ $message }}</p> @enderror
                 </div>
 
+                {{-- Editorial --}}
+                <div>
+                    <label for="editorial" class="form-label-custom">Editorial</label>
+                    <input type="text" id="editorial" name="editorial" class="input-custom"
+                           value="{{ old('editorial', $libro->editorial) }}"
+                           placeholder="Nombre de la editorial">
+                    @error('editorial') <p class="field-error">{{ $message }}</p> @enderror
+                </div>
+
+                {{-- Número de páginas --}}
+                <div>
+                    <label for="numero_paginas" class="form-label-custom">Número de páginas</label>
+                    <input type="number" id="numero_paginas" name="numero_paginas" class="input-custom"
+                           value="{{ old('numero_paginas', $libro->numero_paginas) }}"
+                           min="1" placeholder="--">
+                    @error('numero_paginas') <p class="field-error">{{ $message }}</p> @enderror
+                </div>
+
+                {{-- Portada (URL) --}}
+                <div class="full">
+                    <label for="portada" class="form-label-custom">URL de portada</label>
+                    <input type="url" id="portada" name="portada" class="input-custom"
+                           value="{{ old('portada', $libro->portada) }}"
+                           placeholder="https://ejemplo.com/portada.jpg">
+                    @error('portada') <p class="field-error">{{ $message }}</p> @enderror
+                </div>
+
+                {{-- Sinopsis --}}
+                <div class="full">
+                    <label for="sinopsis" class="form-label-custom">Sinopsis</label>
+                    <textarea id="sinopsis" name="sinopsis" class="input-custom" rows="4"
+                              placeholder="Breve descripción del contenido">{{ old('sinopsis', $libro->sinopsis) }}</textarea>
+                    @error('sinopsis') <p class="field-error">{{ $message }}</p> @enderror
+                </div>
+
                 {{-- Cantidad disponible --}}
                 <div>
                     <label for="cantidad_disponible" class="form-label-custom">Cantidad disponible</label>

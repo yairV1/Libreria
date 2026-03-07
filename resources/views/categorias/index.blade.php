@@ -249,6 +249,7 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
+                    <th class="center">Libros</th>
                     <th>Descripción</th>
                     <th class="center">Estado</th>
                     <th class="center">Acciones</th>
@@ -258,6 +259,7 @@
                 @foreach($categorias as $categoria)
                 <tr>
                     <td><span class="cat-nombre">{{ $categoria->nombre }}</span></td>
+                    <td class="center"><span class="cat-count">{{ $categoria->libros_count }}</span></td>
                     <td><span class="cat-desc">{{ $categoria->descripcion }}</span></td>
                     <td class="center">
                         @if($categoria->estado)
@@ -284,6 +286,10 @@
         </table>
     </div>
 
+    {{-- paginación para rendimiento --}}
+    <div class="mt-4">
+        {{ $categorias->links() }}
+    </div>
 </div>
 
 </x-app-layout>

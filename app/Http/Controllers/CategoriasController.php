@@ -12,7 +12,10 @@ class CategoriasController extends Controller
      */
     public function index()
     {
-        $categorias = categorias::all();
+        // paginar y traer conteo de libros para no cargar demasiados registros al mismo tiempo
+        $categorias = categorias::withCount('libros')
+                                 ->orderBy('nombre')
+                                 ->paginate(15);
         return view('categorias.index', compact('categorias'));
     }
 
@@ -33,6 +36,10 @@ class CategoriasController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
             'estado' => 'required|boolean',
+
+            // campos opcionales para presentación
+            'color' => 'nullable|string',
+            'icono' => 'nullable|string',
         ]);
 
         categorias::create($request->all());
@@ -65,6 +72,9 @@ class CategoriasController extends Controller
             'nombre' => 'required',
             'descripcion' => 'required',
             'estado' => 'required|boolean',
+
+            'color' => 'nullable|string',
+            'icono' => 'nullable|string',
         ]);
 
         $categorias->update($request->all());

@@ -310,7 +310,13 @@
 
     <div class="detail-grid">
 
-        {{-- Book cover illustration --}}
+        {{-- Book cover illustration (agregamos imagen real si hay) --}}
+        @if($libro->portada)
+            <div class="book-cover-wrap" style="text-align:center; margin-bottom:1rem;">
+                <img src="{{ $libro->portada }}" alt="Portada" style="max-width:200px; display:block; margin:0 auto 1rem;" />
+            </div>
+        @endif
+        <div class="book-cover-wrap">
         <div class="book-cover-wrap">
             <div class="book-3d" id="book3d" title="Haz clic para girar">
                 <div class="book-spine-3d" id="bookSpine"></div>
@@ -358,6 +364,14 @@
             <div class="info-row">
                 <span class="info-key">Categoría</span>
                 <span class="cat-pill">{{ $libro->categoria->nombre }}</span>
+            </div>
+            <div class="info-row">
+                <span class="info-key">Editorial</span>
+                <span class="info-val">{{ $libro->editorial ?? '—' }}</span>
+            </div>
+            <div class="info-row full">
+                <span class="info-key">Sinopsis</span>
+                <span class="info-val" style="max-width:400px">{{ $libro->sinopsis ?? 'No hay descripción' }}</span>
             </div>
             <div class="info-row">
                 <span class="info-key">Disponibles</span>

@@ -249,8 +249,10 @@
         <table class="lib-table">
             <thead>
                 <tr>
+                    <th>Portada</th>
                     <th>Título</th>
                     <th>Autor</th>
+                    <th>Editorial</th>
                     <th>Año</th>
                     <th>ISBN</th>
                     <th>Categoría</th>
@@ -261,8 +263,14 @@
             <tbody>
                 @forelse($libros as $libro)
                 <tr>
+                    <td>
+                        @if($libro->portada)
+                            <img src="{{ $libro->portada }}" alt="{{ $libro->titulo }}" style="height:40px;" />
+                        @endif
+                    </td>
                     <td><span class="lib-titulo">{{ $libro->titulo }}</span></td>
                     <td><span class="lib-autor">{{ $libro->autor }}</span></td>
+                    <td><span class="lib-meta">{{ $libro->editorial }}</span></td>
                     <td><span class="lib-meta">{{ $libro->anio_publicacion }}</span></td>
                     <td><span class="lib-meta">{{ $libro->isbn }}</span></td>
                     <td><span class="cat-pill">{{ $libro->categoria->nombre }}</span></td>
@@ -287,7 +295,7 @@
                 </tr>
                 @empty
                 <tr>
-                    <td colspan="7">
+                    <td colspan="9">
                         <div class="empty-state">
                             <div class="empty-icon">📚</div>
                             <p>No hay libros registrados aún.</p>
@@ -297,6 +305,11 @@
                 @endforelse
             </tbody>
         </table>
+    </div>
+
+    {{-- paginación para rendimiento --}}
+    <div class="mt-4">
+        {{ $libros->links() }}
     </div>
 
 </div>

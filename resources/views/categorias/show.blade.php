@@ -295,6 +295,21 @@
                 <p class="info-val-body mb-0">{{ $categorias->descripcion ?? '—' }}</p>
             </div>
             <div class="info-row">
+                <span class="info-key">Color</span>
+                <span class="info-val">
+                    @if($categorias->color)
+                        <span style="display:inline-block;width:16px;height:16px;border:1px solid #ccc;background:{{ $categorias->color }};vertical-align:middle;margin-right:4px"></span>
+                        {{ $categorias->color }}
+                    @else
+                        —
+                    @endif
+                </span>
+            </div>
+            <div class="info-row">
+                <span class="info-key">Icono</span>
+                <span class="info-val">{{ $categorias->icono ?? '—' }}</span>
+            </div>
+            <div class="info-row">
                 <span class="info-key">Estado</span>
                 <span>
                     @if($categorias->estado)

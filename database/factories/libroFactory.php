@@ -33,6 +33,12 @@ class libroFactory extends Factory
             // either associate with an existing category or create a new one
             'categoria_id' => categorias::factory(),
             'cantidad_disponible' => $this->faker->numberBetween(1, 100),
+
+            // nuevos detalles
+            'sinopsis' => $this->faker->paragraph(),
+            'portada' => $this->faker->imageUrl(200,300,'books',true),
+            'editorial' => $this->faker->company(),
+            'numero_paginas' => $this->faker->numberBetween(50, 1000),
         ];
     }
 }
