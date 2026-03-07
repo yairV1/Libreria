@@ -153,8 +153,13 @@
 
             <!-- Logo / Brand -->
             <div class="flex items-center gap-10">
+
                 <!-- Nav links (desktop) -->
                 <div class="hidden sm:flex items-center gap-8">
+                    <a href="{{ route('dashboard') }}"
+                       class="nav-link-item {{ request()->routeIs('dashboard') ? 'active' : '' }}">
+                        Dashboard
+                    </a>
                     <a href="/libros"
                        class="nav-link-item {{ request()->is('libros*') ? 'active' : '' }}">
                         Libros
